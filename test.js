@@ -1,4 +1,4 @@
-
+module.exports = (function(){
 var land = document.createElement("div"),
     field = document.createElement("div"),
     scoreBoard = document.createElement("div"),
@@ -53,3 +53,4 @@ newSquad1.squad.forEach(function(res) {
     land.appendChild(field);
     land.appendChild(scoreBoard); 
     container.appendChild(land);
+});

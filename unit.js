@@ -1,9 +1,9 @@
-function militaryResource(type,health,distance,damage){
+module.exports =(function militaryResource(type,health,distance,damage){
 	this.type = type;
 	this.health = this.maxHealth = health;
 	this.damage = damage;
 	this.distance = this.maxDistance = distance;
-}
+})
 
 militaryResource.prototype.isReadyToMove = function (distance){
 	return distance <= this.distance;
@@ -40,4 +40,4 @@ militaryResource.prototype.attackedBy = function(damage){
 		return "dead";
 	else
 		return this.health-=damage;
-	}
+	};

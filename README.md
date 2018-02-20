@@ -1,2 +1,2 @@
 # Hillel_js
-test1
+Military game with webpack
