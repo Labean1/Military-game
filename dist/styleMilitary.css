@@ -1,0 +1,13 @@
+*{margin: 0; padding:0;}
+.resource{width:200px;height:300px;float:left;}
+.resource-titel{text-align: center;font-size: 26px;}
+.resource.active{background-color:black !important;}
+.land{width:800px;height:800px;float:left;background-color:#46A229;margin: auto;}
+.list{width:750px;height:200px;margin:20px auto 0;background-color:#228D00;border: 1.25px double black;}
+.field{width:500px;height:400px;margin:5px 0 0 24px ;float:left;background-color:#228D00;border: 1.25px double black;}
+.score{width:242px;height:400px;margin:5px 0 0 5px ;float:left;background-color:#228D00;border: 1.25px double black;}
+.warrior{width:125px;height:150px;margin:25px 23.5px 25px 23.5px ;float:left;background-color:#46A229;border: 1.25px double black;}
+.fieldCell{width:50px;height:50px;float:left;}
+.warrior-list{text-align:center;padding-bottom: 5px;text-transform:uppercase;}
+li{list-style-type:none; padding: 0;margin-left:5px;}
+.fieldCell{}
