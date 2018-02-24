@@ -60,35 +60,21 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(1);
-__webpack_require__(2);
-__webpack_require__(3);
-__webpack_require__(4);
-__webpack_require__(5);
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+module.exports = (militaryResource);
 
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports =(function militaryResource(type,health,distance,damage){
-	this.type = type;
-	this.health = this.maxHealth = health;
+function militaryResource(type,health,distance,damage){
+ 	this.type = type;
+ 	this.health = this.maxHealth = health;
 	this.damage = damage;
 	this.distance = this.maxDistance = distance;
-})
+};
 
 militaryResource.prototype.isReadyToMove = function (distance){
 	return distance <= this.distance;
@@ -125,18 +111,19 @@ militaryResource.prototype.attackedBy = function(damage){
 		return "dead";
 	else
 		return this.health-=damage;
-	};
-
+};
 
 /***/ }),
-/* 3 */
+/* 1 */
 /***/ (function(module, exports) {
 
-module.exports = (function squad(defaultResource){
+module.exports =(squad);
+ 
+function squad(defaultResource){
 	this.squad = [];
 	if(defaultResource)
 		this.combineResources(defaultResource);
-});
+}
 
 squad.prototype.combineResources = function(resurcesToСombine){
 	this.squad=this.squad.concat(resurcesToСombine);
@@ -161,12 +148,6 @@ squad.prototype.clone = function(){
 		unit.clone();
 	})
 }
-	/*Squad.prototype.attackedBy = function(){
-		this.squad.forEach(function(unit){
-			unit.attackedBy();
-		})
-	}*/
-
 
 
 	
@@ -181,10 +162,32 @@ squad.prototype.clone = function(){
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports) {
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (function(){
+var militaryResource = __webpack_require__(0);
+var squad = __webpack_require__(1);
+var newResourceKnight = new militaryResource("knight", 100, 200, 20);
+var newResourceArcher = new militaryResource("archer", 50, 150, 30);
+var newSquad1 = new squad([newResourceArcher, newResourceArcher, newResourceArcher, newResourceKnight]);
+var newSquad2 = new squad([newResourceKnight, newResourceKnight, newResourceKnight, newResourceKnight]);
+console.log(newSquad1);
+console.log(newSquad2);
+__webpack_require__(3);
+__webpack_require__(4);
+
+module.exports(function(){
+    return newSquad1});
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var militaryResource = __webpack_require__(0);
+var squad = __webpack_require__(1);
+var newSquad1 = new squad([newResourceArcher, newResourceArcher, newResourceArcher, newResourceKnight]);
+console.log(newSquad1); 
 var land = document.createElement("div"),
     field = document.createElement("div"),
     scoreBoard = document.createElement("div"),
@@ -238,38 +241,14 @@ newSquad1.squad.forEach(function(res) {
     land.appendChild(listOfWarriors);
     land.appendChild(field);
     land.appendChild(scoreBoard); 
-    container.appendChild(land);});
+    container.appendChild(land);
+
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
-module.exports = (function(){
-var newResourceKnight = new militaryResource("knight", 100, 200, 20);
-var newResourceArcher = new militaryResource("archer", 50, 150, 30);
-console.log(newResourceKnight)
-console.log(newResourceArcher);
-var newSquad1 = new squad([newResourceArcher, newResourceArcher, newResourceArcher, newResourceKnight]);
-var newSquad2 = new squad([newResourceKnight, newResourceKnight, newResourceKnight, newResourceKnight]);
-console.log(newSquad1);
-console.log(newSquad2);});
-
-	/*function kill(){
-		var timerId = setInterval(function() {
-			if(Math.ceil(Math.random()=1)){
-  				newSquad1.Math.ceil(Math.random()*4).attackedBy(newSquad2.Math.ceil(Math.random()*4).damage);
-  				console.log(newSquad1);
-				console.log(newSquad2);
-			}
-  			else{
-  				newSquad2.Math.ceil(Math.random()*4).attackedBy(newSquad1.Math.ceil(Math.random()*4).damage);
-  				console.log(newSquad1);
-				console.log(newSquad2);
-			}
-		}, Math.ceil(Math.random()*4));
-	}*/
-
-
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

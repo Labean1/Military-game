@@ -9,7 +9,6 @@ module.exports = {
         path: join(__dirname, "./dist"),
         filename: "[name].bundle.js"
     },
-  
     module:{
         rules:[
             {test:/\.hbs$/, use:"html-loader"},

@@ -1,8 +1,10 @@
-module.exports = (function squad(defaultResource){
+module.exports =(squad);
+ 
+function squad(defaultResource){
 	this.squad = [];
 	if(defaultResource)
 		this.combineResources(defaultResource);
-});
+}
 
 squad.prototype.combineResources = function(resurcesToСombine){
 	this.squad=this.squad.concat(resurcesToСombine);
@@ -27,12 +29,6 @@ squad.prototype.clone = function(){
 		unit.clone();
 	})
 }
-	/*Squad.prototype.attackedBy = function(){
-		this.squad.forEach(function(unit){
-			unit.attackedBy();
-		})
-	}*/
-
 
 
 	

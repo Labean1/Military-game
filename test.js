@@ -1,4 +1,5 @@
-module.exports = (function(){
+var newSquad1 = require("./app.js");
+console.log(newSquad1); 
 var land = document.createElement("div"),
     field = document.createElement("div"),
     scoreBoard = document.createElement("div"),
@@ -53,4 +54,3 @@ newSquad1.squad.forEach(function(res) {
     land.appendChild(field);
     land.appendChild(scoreBoard); 
     container.appendChild(land);
-});
